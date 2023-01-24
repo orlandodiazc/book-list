@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <script src="scripts/library.js" defer></script>
+  <title>Book Library</title>
+</head>
+
+<body>
+  <header>
+    <h1>Awesome books</h1>
+  </header>
+  <main>
+    <div class="book-container">
+    </div>
+
+    <template id="book-row-template">
+      <div class="book">
+        <p class="book-title">dune</p>
+        <p class="book-author">andres perez</p>
+        <button class="remove-row">Remove</button>
+      </div>
+    </template>
+
+    <form class="book-form" action="#">
+      <div class="form-row">
+        <input type="text" name="book-title" id="title" placeholder="Title">
+      </div>
+      <div class="form-row">
+        <input type="text" name="book-author" id="author" placeholder="Author">
+      </div>
+      <div class="form-row">
+        <button class="btn-add-book" type="submit">Add</button>
+      </div>
+    </form>
+  </main>
+</body>
+
+</html>
