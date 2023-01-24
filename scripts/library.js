@@ -1,4 +1,4 @@
-const bookLibrary = [];
+let bookLibrary = [];
 const bookForm = document.querySelector('.book-form');
 const bookContainer = document.querySelector('.book-container');
 const bookRowTemplate = document.getElementById('book-row-template');
@@ -20,6 +20,7 @@ function addBook(e) {
     currentBook = Book(dataTitle, dataAuthor);
     bookLibrary.push(currentBook);
     addBookFn(currentBook);
+    localStorage.setItem('bookLibrary', JSON.stringify(bookLibrary));
   }
   e.preventDefault();
 }
@@ -32,6 +33,7 @@ function removeBook(e) {
     currentFilter = libraryFilter(bookTitle, bookAuthor);
     bookLibrary.splice(bookLibrary.indexOf(currentFilter[0]), 1);
     e.target.parentNode.remove();
+    localStorage.setItem('bookLibrary', JSON.stringify(bookLibrary));
   }
 }
 
@@ -46,6 +48,10 @@ function displayBooks(books) {
   books.forEach((book) => {
     addBookFn(book);
   });
+}
+
+if (localStorage.getItem('bookLibrary')) {
+  bookLibrary = JSON.parse(localStorage.getItem('bookLibrary'));
 }
 
 displayBooks(bookLibrary);
