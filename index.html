@@ -1,43 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css" />
-  <script src="scripts/library.js" defer></script>
-  <title>Book Library</title>
-</head>
-
-<body>
-  <header>
-    <h1>Awesome books</h1>
-  </header>
-  <main>
-    <div class="book-container">
-    </div>
-
-    <template id="book-row-template">
-      <div class="book">
-        <p class="book-title">dune</p>
-        <p class="book-author">andres perez</p>
-        <button class="remove-row">Remove</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="scripts/library.js" defer></script>
+    <script src="scripts/manageSections.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+    <title>Book Library</title>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper navbar">
+        <p class="header-logo">Awesome Books</p>
+        <nav class="header-nav">
+          <ul role="list" class="nav-list">
+            <li><a id="list-link" href="#list">List</a></li>
+            <li><a id="add-book-link" href="#add-book">Add Books</a></li>
+            <li><a id="contact-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-    </template>
-
-    <form class="book-form" action="#">
-      <div class="form-row">
-        <input type="text" name="book-title" id="title" placeholder="Title" required>
+    </header>
+    <main>
+      <div class="wrapper">
+        <p class="date-now"></p>
+        <section class="book-list">
+          <h2 class="text-center">All books</h2>
+          <div class="book-container">
+            <p class="library-info text-center hidden">The library is empty, to add a book go to the Add Book page</p>
+          </div>
+          <template id="book-row-template">
+            <div class="book">
+              <p>"<span class="book-title"> </span>"&nbsp; by &nbsp;<span class="book-author"></span></p>
+              <button class="remove-row">Remove</button>
+            </div>
+          </template>
+        </section>
+        <section class="add-book hidden">
+          <h2 class="text-center">Add a new book</h2>
+          <div class="form-container">
+            <form class="book-form" action="#">
+              <div class="form-row">
+                <input type="text" name="book-title" id="title" placeholder="Title" required />
+              </div>
+              <div class="form-row">
+                <input type="text" name="book-author" id="author" placeholder="Author" required />
+              </div>
+              <div class="form-row">
+                <button class="btn-add-book" type="submit">Add</button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="contact hidden">
+          <h2 class="text-center">Contact information</h2>
+          <div class="contact-info">
+            <p>Do you have any questions or you just want to say "Hello"?</p>
+            <p>You can reach out to us!</p>
+            <ul>
+              <li>Our e-mail: mail@mail.com</li>
+              <li>Our phone number: 55555555</li>
+              <li>Our address: Streenname 22, City, Country</li>
+            </ul>
+          </div>
+        </section>
       </div>
-      <div class="form-row">
-        <input type="text" name="book-author" id="author" placeholder="Author" required>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <div class="copyright-info">
+          <p>2021 Orlando Diaz. MIT Licensed</p>
+        </div>
       </div>
-      <div class="form-row">
-        <button class="btn-add-book" type="submit">Add</button>
-      </div>
-    </form>
-  </main>
-</body>
-
+    </footer>
+  </body>
 </html>

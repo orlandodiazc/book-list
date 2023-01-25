@@ -1,21 +1,35 @@
 {
-  "name": "event_website",
+  "name": "book_website",
   "version": "1.0.0",
+  "type": "module",
   "description": "<!-- HOW TO USE: This is an example of how you may give instructions on setting up your project locally.",
-  "main": "index.js",
+  "main": "manageSections.js",
+  "prettier": {
+    "printWidth": 250,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "overrides": [
+      {
+        "files": "**/*.js",
+        "options": {
+          "printWidth": 100
+        }
+      }
+    ]
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ditod1/event-website.git"
+    "url": "git+https://github.com/ditod1/book-website.git"
   },
   "author": "Orlando Diaz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ditod1/event-website/issues"
+    "url": "https://github.com/ditod1/book-website/issues"
   },
-  "homepage": "https://github.com/ditod1/event-website#readme",
+  "homepage": "https://github.com/ditod1/book-website#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
@@ -27,5 +41,8 @@
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0"
+  },
+  "dependencies": {
+    "luxon": "^3.2.1"
   }
 }
