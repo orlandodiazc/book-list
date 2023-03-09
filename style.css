@@ -1,0 +1,220 @@
+:root {
+  --clr-secondary-900: #78002e;
+  --clr-secondary-700: #ad1457;
+  --clr-secondary-300: #e35183;
+  --clr-neutral-100: #fff;
+  --clr-primary-900: #1b1b1b;
+  --clr-primary-700: #424242;
+  --clr-primary-300: #6d6d6d;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-300);
+  font-family: 'Roboto', sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border-radius: 5px;
+  font-size: 100%;
+  padding: 0.2em 0.4em;
+  border: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General Styling */
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.5em;
+}
+
+main {
+  flex: 1;
+}
+
+header {
+  background-color: var(--clr-primary-700);
+}
+
+footer {
+  padding-block: 1rem;
+}
+
+button {
+  cursor: pointer;
+  background: var(--clr-secondary-700);
+  border: none;
+  border-radius: 5px;
+  padding: 0.2em 0.8em;
+  box-shadow: 1px 1px 1px white;
+  color: white;
+  transition: all 0.5s ease-out;
+}
+
+button:active {
+  background-color: var(--clr-secondary-300);
+  border-radius: 100vw;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  font-size: 1.5rem;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-nav a:hover,
+.header-nav a:focus-within {
+  color: var(--clr-secondary-300);
+}
+
+.header-nav ul {
+  display: flex;
+}
+
+.header-nav li {
+  padding-inline: 0.5rem;
+}
+
+.header-nav li:not(:last-child) {
+  border-right: 1px solid var(--clr-secondary-700);
+}
+
+.date-now {
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.book-container {
+  background-color: var(--clr-primary-700);
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px white;
+}
+
+.book {
+  display: flex;
+  padding: 0.3em;
+  justify-content: space-between;
+}
+
+.book > p {
+  display: flex;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.book-form {
+  width: 50%;
+}
+
+.form-row {
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+}
+
+.form-row:has(button) {
+  text-align: right;
+}
+
+.contact-info {
+  max-width: 50%;
+  margin-inline: auto;
+}
+
+.contact ul {
+  list-style-position: inside;
+}
+
+.hidden {
+  display: none;
+}
